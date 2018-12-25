@@ -1,10 +1,10 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://assets/main-font/8-bit-wonder.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/main-font/red-alert-inet.ttf" type="DynamicFontData" id=1]
 
 [resource]
 
-size = 72
+size = 128
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 1 )
