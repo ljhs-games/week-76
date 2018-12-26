@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/Game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Game State.gd" type="Script" id=1]
 [ext_resource path="res://nodes/escape-listener/EscapeListener.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Demon.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
@@ -48,7 +48,5 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="Demon" index="1"]
 
 texture = ExtResource( 4 )
-
-[connection signal="lose_point" from="Demon" to="." method="_on_Demon_lose_point"]
 
 
