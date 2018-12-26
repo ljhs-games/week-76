@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+
+void fragment() {
+	vec2 lava_offset;
+	lava_offset.x = cos(TIME + UV.x + UV.y);
+	lava_offset.y = sin(TIME + UV.y + UV.x);
+	vec4 color_scalar = vec4(1.0);
+	color_scalar.rgb = vec3(sin(TIME + UV.x));
+	COLOR = texture(TEXTURE, UV + lava_offset * 0.04);
+	COLOR *= color_scalar;
+}"
+
+[resource]
+
+render_priority = 0
+shader = SubResource( 1 )
+
