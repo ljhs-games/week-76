@@ -21,6 +21,19 @@ Artist
 ApGoldberg
 as
 Programmer
+
+Nyeh Heh Heh!
+by
+Toby Fox
+
+Suspense Music provided by No Copyright Music:
+https://youtu.be/iIO-6fmCS3w
+
+Music used: Sniper Training by Tim Beek
+timbeek.com
+
+Licensed under Creative Commons Attribution 4.0
+https://creativecommons.org/licenses/...
 """
 
 func _ready():

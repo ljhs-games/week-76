@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nyeh-heh-heh.ogg-0d559b27a26e1e7e44504552947555a6.oggstr"
+
+[deps]
+
+source_file="res://scenes/cutscenes/nyeh-heh-heh.ogg"
+dest_files=[ "res://.import/nyeh-heh-heh.ogg-0d559b27a26e1e7e44504552947555a6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
