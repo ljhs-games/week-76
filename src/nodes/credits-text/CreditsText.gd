@@ -21,6 +21,10 @@ Artist
 ApGoldberg
 as
 Programmer
+
+Nyeh Heh Heh!
+by
+Toby Fox
 """
 
 func _ready():
