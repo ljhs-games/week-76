@@ -4,6 +4,7 @@ const move_accel = 20.0
 export var max_velocity = 400.0
 
 const acceptable_radius = 10.0
+const bullet_pack = preload("res://nodes/bullet/Bullet.tscn")
 
 var acceleration = Vector2()
 var velocity = Vector2()
@@ -40,9 +41,15 @@ func _input(event):
 		if GameState.can_fire:
 			$FirePlayer.play()
 			$AnimationPlayer.play("fire")
+			$HitTimer.start()
 			$ReloadSoundTimer.wait_time = GameState.fire_timer.wait_time - $ReloadPlayer.stream.get_length()
 			$ReloadSoundTimer.start()
 			GameState.fired()
 
 func _on_ReloadSoundTimer_timeout():
 	$ReloadPlayer.play()
+
+func _on_HitTimer_timeout():
+	var cur_bullet = bullet_pack.instance()
+	get_parent().add_child(cur_bullet)
+	cur_bullet.fire(global_position)
