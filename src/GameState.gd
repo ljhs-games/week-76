@@ -37,6 +37,7 @@ func _score_set(new_score):
 
 func fired():
 	can_fire = false
+	#GameState.ammo -= 1
 	fire_timer.start()
 
 func _on_timer_timeout():

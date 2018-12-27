@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://nodes/background/Background.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://nodes/score/Score.gd" type="Script" id=7]
 [ext_resource path="res://nodes/health-bar/HealthBar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://nodes/health-bar/HealthBar.gd" type="Script" id=9]
+[ext_resource path="res://nodes/ammo-indicator/AmmoIndicator.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -43,7 +44,12 @@ script = ExtResource( 7 )
 
 [node name="HealthBar" parent="UI" index="2" instance=ExtResource( 8 )]
 
-margin_right = -20.0
+margin_left = -230.0
+margin_top = 90.0
+margin_right = 0.0
+margin_bottom = 120.0
 script = ExtResource( 9 )
+
+[node name="AmmoIndicator" parent="UI" index="3" instance=ExtResource( 10 )]
 
 
