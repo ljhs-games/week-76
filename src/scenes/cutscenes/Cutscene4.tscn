@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/cutscenes/Handshake.png" type="Texture" id=1]
+[ext_resource path="res://nodes/travel-button/TravelButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/main-font/Big.tres" type="DynamicFont" id=3]
+
+[node name="Cutscene4" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 700.0
+margin_bottom = 570.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.282353, 0.0196078, 0, 1 )
+
+[node name="HandShake" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, 130 )
+scale = Vector2( 3.5, 4.00759 )
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TravelButton" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -284.0
+margin_top = -128.0
+margin_right = 0.0
+margin_bottom = 0.0
+custom_fonts/font = ExtResource( 3 )
+text = "Next"
+_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
+target_scene = "res://scenes/Game.tscn"
+
+

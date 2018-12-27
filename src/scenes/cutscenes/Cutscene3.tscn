@@ -1,0 +1,153 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/cutscenes/Apartment_Outside.png" type="Texture" id=1]
+[ext_resource path="res://scenes/cutscenes/Player_Falling.png" type="Texture" id=2]
+[ext_resource path="res://scenes/cutscenes/Hell_Portal.png" type="Texture" id=3]
+[ext_resource path="res://nodes/travel-button/TravelButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/main-font/Big.tres" type="DynamicFont" id=5]
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.219178, 0.803653, 0.995434 )
+colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0.818841, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 22, 5, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = -0.44
+orbit_velocity_random = 1.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Emission Shape", "Flags", "Gravity", "Orbit Velocity", "Trail" ]
+
+[node name="Cutscene3" type="Node2D"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 700.0
+margin_bottom = 570.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.494118, 0.752941, 0.933333, 1 )
+
+[node name="Apartment" type="Sprite" parent="." index="1"]
+
+position = Vector2( 170, 100 )
+scale = Vector2( 11.0938, 12.7027 )
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="PlayerFalling" type="Sprite" parent="." index="2"]
+
+position = Vector2( 130, 140 )
+scale = Vector2( 6.72709, 7.7027 )
+texture = ExtResource( 2 )
+centered = false
+region_rect = Rect2( 10, -2, 32, 33 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="HellPortal" type="Sprite" parent="." index="3"]
+
+position = Vector2( 10, 440 )
+scale = Vector2( 6.72709, 4.6875 )
+texture = ExtResource( 3 )
+centered = false
+region_rect = Rect2( 10, -2, 32, 33 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Particles2D" type="Particles2D" parent="HellPortal" index="0"]
+
+position = Vector2( 28.244, 14.9333 )
+emitting = true
+amount = 21
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 1 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Visibility" ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TravelButton" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -284.0
+margin_top = -128.0
+margin_right = 0.0
+margin_bottom = 0.0
+custom_fonts/font = ExtResource( 5 )
+text = "Next"
+_sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
+target_scene = "res://scenes/cutscenes/Cutscene4.tscn"
+
+
