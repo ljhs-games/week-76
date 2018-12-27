@@ -1,13 +1,16 @@
 extends Node
 
 signal score_changed(new_score)
+signal health_changed(new_health)
 signal ammo_changed(new_ammo)
 
 const reload_time = 3.0
+const max_health = 100
 const max_ammo = 6
 
 var score = 0 setget _score_set
 var ammo = max_ammo setget _ammo_set
+var health = max_health setget _health_set
 var can_fire = true setget ,_can_fire_get
 onready var fire_timer = Timer.new()
 
@@ -23,6 +26,10 @@ func _can_fire_get():
 func _ammo_set(new_ammo):
 	ammo = new_ammo
 	emit_signal("ammo_changed", new_ammo)
+
+func _health_set(new_health):
+	health = new_health
+	emit_signal("health_changed", new_health)
 
 func _score_set(new_score):
 	score = new_score
