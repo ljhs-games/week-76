@@ -45,6 +45,8 @@ func _input(event):
 			$ReloadSoundTimer.wait_time = GameState.fire_timer.wait_time - $ReloadPlayer.stream.get_length()
 			$ReloadSoundTimer.start()
 			GameState.fired()
+		else:
+			$DryFirePlayer.play()
 
 func _on_ReloadSoundTimer_timeout():
 	$ReloadPlayer.play()
