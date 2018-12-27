@@ -84,7 +84,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Demon" type="Area2D" groups=[
+[node name="Demon" type="Area2D" index="0" groups=[
 "demon",
 ]]
 
@@ -102,6 +102,7 @@ script = ExtResource( 1 )
 scale = Vector2( 4.5, 4.5 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
