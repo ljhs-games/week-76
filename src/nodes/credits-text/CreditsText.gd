@@ -13,6 +13,14 @@ Team Lead and Programmer
 Stving_artist
 as
 Lead Artist
+
+Kathan ( Armagheddon )
+as
+Artist
+
+ApGoldberg
+as
+Programmer
 """
 
 func _ready():
