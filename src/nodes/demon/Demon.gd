@@ -1,10 +1,17 @@
 extends Area2D
 
+const shield_pack = preload("res://nodes/shield/Shield.tscn")
 const damage = 10
 const move_speed = 100
+const shield_chance = 0.0 # shield not absorbing hit
 const escape_height = 100
 
 func _ready():
+	randomize()
+	if rand_range(0,1) < shield_chance:
+		var cur_shield = shield_pack.instance()
+		add_child(cur_shield)
+		cur_shield.global_position = global_position
 	set_process(true)
 
 func _process(delta):
