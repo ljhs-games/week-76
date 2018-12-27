@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bullet-impact.wav-c9c8f8c54d828fd1c0fe8f3a4bdef613.sample"
+
+[deps]
+
+source_file="res://nodes/bullet/bullet-impact.wav"
+dest_files=[ "res://.import/bullet-impact.wav-c9c8f8c54d828fd1c0fe8f3a4bdef613.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

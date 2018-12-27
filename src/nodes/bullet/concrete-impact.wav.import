@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/concrete-impact.wav-6d3f9b811ec97b7a458614b8054ae911.sample"
+
+[deps]
+
+source_file="res://nodes/bullet/concrete-impact.wav"
+dest_files=[ "res://.import/concrete-impact.wav-6d3f9b811ec97b7a458614b8054ae911.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
