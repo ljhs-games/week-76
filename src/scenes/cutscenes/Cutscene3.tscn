@@ -106,7 +106,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Particles2D" type="Particles2D" parent="HellPortal" index="0"]
 
-visible = false
 position = Vector2( 28.244, 14.9333 )
 emitting = true
 amount = 21
