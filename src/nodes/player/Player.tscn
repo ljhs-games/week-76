@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ 50.0, 400.0 ]
 }
 
-[node name="Player" type="Sprite" index="0"]
+[node name="Player" type="Sprite"]
 
 scale = Vector2( 2.2, 2.2 )
 texture = ExtResource( 1 )
