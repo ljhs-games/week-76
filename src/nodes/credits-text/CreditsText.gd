@@ -1,6 +1,6 @@
 extends Label
 
-export var scroll_rate = 40.0
+const scroll_rate = 120.0
 
 var start_counter = 0.0
 
@@ -25,6 +25,15 @@ Programmer
 Nyeh Heh Heh!
 by
 Toby Fox
+
+Sniper Rifle Fire
+by
+EMSlarma CC Attribution
+Noncommercial 3.0
+
+Sniper Rifle Click
+by
+Mike Koenig CC Attribution 3.0
 
 Suspense Music provided by No Copyright Music:
 https://youtu.be/iIO-6fmCS3w
