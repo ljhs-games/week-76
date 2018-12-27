@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ 50.0, 400.0 ]
 }
 
-[node name="Player" type="Sprite"]
+[node name="Player" type="Sprite" index="0"]
 
 scale = Vector2( 2.2, 2.2 )
 texture = ExtResource( 1 )
@@ -87,7 +87,7 @@ bus = "Effects"
 [node name="ReloadPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 5 )
-volume_db = 0.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
