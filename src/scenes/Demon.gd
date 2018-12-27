@@ -1,11 +1,11 @@
 extends Area2D
 
-const move_speed = -1
+const move_speed = -100
 const damage = 1
+const max_height = 20
 
 func _process(delta):
-	global_position.y += move_speed
-	if global_position.y <= 20:
+	global_position.y += move_speed * delta
+	if global_position.y <= max_height:
 		queue_free()
-		var health = get_parent().max_health
-		health -= damage
+		GameState.health -= damage

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/Game State.gd" type="Script" id=1]
+[ext_resource path="res://scenes/GameState.gd" type="Script" id=1]
 [ext_resource path="res://nodes/escape-listener/EscapeListener.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Demon.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Game State" type="Node2D" index="0"]
+[node name="GameState" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
