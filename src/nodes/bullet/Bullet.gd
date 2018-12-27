@@ -23,7 +23,7 @@ func _physics_process(delta):
 			queue_free()
 			hit_something = true
 			break
-		elif a.is_in_group("shield"):
+		elif a.is_in_group("shield") and GameState.ammo > 0:
 			a.hit()
 			GameState.ammo -= 1
 			$DestroyTimer.wait_time = max($WoodParticles.lifetime, $ShieldHitStreamPlayer.stream.get_length())
@@ -32,7 +32,7 @@ func _physics_process(delta):
 			$WoodParticles.emitting = true
 			hit_something = true
 			break
-		elif a.is_in_group("demon") and !a.get_node("AnimationPlayer").is_playing():
+		elif a.is_in_group("demon") and !a.get_node("AnimationPlayer").is_playing() and GameState.ammo > 0:
 			a.hit()
 			GameState.ammo -= 1
 			var cur_bullet_hole = bullet_hole_pack.instance()
@@ -44,7 +44,7 @@ func _physics_process(delta):
 			$BloodyParticles.emitting = true
 			hit_something = true
 			break
-	if !hit_something: # hit a wall
+	if !hit_something and GameState.ammo > 0: # hit a wall
 		GameState.ammo -= 1
 		$DestroyTimer.wait_time = max($WallParticles.lifetime, $MissStreamPlayer.stream.get_length())
 		$DestroyTimer.start()
@@ -53,5 +53,4 @@ func _physics_process(delta):
 	set_physics_process(false)
 
 func _on_DestroyTimer_timeout():
-	print("bye")
 	queue_free()

@@ -3,8 +3,9 @@ extends Node
 signal score_changed(new_score)
 signal health_changed(new_health)
 signal ammo_changed(new_ammo)
+signal game_over
 
-const reload_time = 3.0
+const reload_time = 1.5
 const max_health = 100
 const max_ammo = 6
 
@@ -21,14 +22,19 @@ func _ready():
 	fire_timer.connect("timeout", self, "_on_timer_timeout")
 
 func _can_fire_get():
-	return can_fire and ammo > 0
+	return can_fire
 
 func _ammo_set(new_ammo):
-	ammo = new_ammo
-	emit_signal("ammo_changed", new_ammo)
+	if new_ammo < max_ammo:
+		ammo = new_ammo
+	else:
+		ammo = max_ammo
+	emit_signal("ammo_changed", ammo)
 
 func _health_set(new_health):
 	health = new_health
+	if health <= 0:
+		emit_signal("game_over")
 	emit_signal("health_changed", new_health)
 
 func _score_set(new_score):
