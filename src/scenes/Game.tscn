@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://nodes/background/Background.tscn" type="PackedScene" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://nodes/demon/DemonSpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nodes/escape-listener/EscapeListener.tscn" type="PackedScene" id=5]
 [ext_resource path="res://nodes/score/Score.tscn" type="PackedScene" id=6]
-[ext_resource path="res://nodes/score/Score.gd" type="Script" id=7]
-[ext_resource path="res://nodes/health-bar/HealthBar.tscn" type="PackedScene" id=8]
-[ext_resource path="res://nodes/health-bar/HealthBar.gd" type="Script" id=9]
-[ext_resource path="res://nodes/ammo-indicator/AmmoIndicator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://nodes/health-bar/HealthBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/health-bar/HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://nodes/ammo-indicator/AmmoIndicator.tscn" type="PackedScene" id=9]
+[ext_resource path="res://nodes/powerup-spawner/PowerupSpawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://nodes/ammo-powerup/AmmoPowerup.tscn" type="PackedScene" id=11]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -40,16 +41,19 @@ main_scene = "res://scenes/TitleScreen.tscn"
 
 [node name="Score" parent="UI" index="1" instance=ExtResource( 6 )]
 
-script = ExtResource( 7 )
-
-[node name="HealthBar" parent="UI" index="2" instance=ExtResource( 8 )]
+[node name="HealthBar" parent="UI" index="2" instance=ExtResource( 7 )]
 
 margin_left = -230.0
 margin_top = 90.0
 margin_right = 0.0
 margin_bottom = 120.0
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
-[node name="AmmoIndicator" parent="UI" index="3" instance=ExtResource( 10 )]
+[node name="AmmoIndicator" parent="UI" index="3" instance=ExtResource( 9 )]
+
+[node name="AmmoPowerupSpawner" parent="." index="4" instance=ExtResource( 10 )]
+
+powerup_pack = ExtResource( 11 )
+time_range = Vector2( 1, 3 )
 
 
