@@ -1,25 +1,26 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://nodes/bullet/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://nodes/bullet/concrete-impact.ogg" type="AudioStream" id=2]
+[ext_resource path="res://nodes/bullet/concrete-impact.wav" type="AudioStream" id=2]
+[ext_resource path="res://nodes/bullet/bullet-impact.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 20.0
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=2]
 
 offsets = PoolRealArray( 0, 0.625571, 1 )
 colors = PoolColorArray( 0.199219, 0.130822, 0.129181, 1, 0.207031, 0.165744, 0.160126, 1, 0.191406, 0.160261, 0.127106, 0 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture" id=3]
 
 flags = 4
-gradient = SubResource( 3 )
+gradient = SubResource( 2 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
 trail_divisor = 1
@@ -49,7 +50,7 @@ angle = 50.0
 angle_random = 1.0
 scale = 8.0
 scale_random = 0.0
-color_ramp = SubResource( 4 )
+color_ramp = SubResource( 3 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -189,13 +190,13 @@ area_mask = 1
 
 [node name="DemonHitStreamPlayer" type="AudioStreamPlayer2D" parent="." index="2"]
 
-stream = null
-volume_db = 0.0
+stream = ExtResource( 3 )
+volume_db = 20.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
-bus = "Master"
+bus = "Effects"
 area_mask = 1
 
 [node name="ShieldHitStreamPlayer" type="AudioStreamPlayer2D" parent="." index="3"]
@@ -224,7 +225,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 texture = null
 normal_map = null
 h_frames = 1
